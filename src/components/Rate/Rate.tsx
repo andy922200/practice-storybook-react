@@ -63,6 +63,7 @@ const Rate = ({
   allowHalf,
   isDisabled,
   onChange,
+  ...props
 }: RateProps & Omit<HTMLAttributes<HTMLDivElement>, 'onChange'>) => {
   const [innerValue, setInnerValue] = useState<number>(
     typeof defaultValue === 'number' ? defaultValue : 0,
@@ -93,7 +94,7 @@ const Rate = ({
   }, [innerValue, onChange])
 
   return (
-    <RateWrapper $size={size} $allowHalf={allowHalf} $isString={isString}>
+    <RateWrapper $size={size} $allowHalf={allowHalf} $isString={isString} {...props}>
       {[...Array(count).keys()].map((itemKey) => (
         <CharacterWrapper key={itemKey}>
           <CharacterFirst
