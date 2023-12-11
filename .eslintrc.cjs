@@ -44,5 +44,6 @@ module.exports = {
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
+    '@typescript-eslint/no-explicit-any': [0],
   },
 }
