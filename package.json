@@ -3,13 +3,23 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "pnpm eslint && pnpm prettier",
     "eslint": "eslint \"./**/*.{ts,tsx,js,jsx,d.ts}\" --fix",
     "prettier": "prettier --write .",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -45,6 +55,7 @@
     "prettier": "^3.0.3",
     "storybook": "^7.4.6",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.7.2"
   }
 }
